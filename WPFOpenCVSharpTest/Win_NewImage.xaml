@@ -1,0 +1,26 @@
+﻿<Window x:Class="WPFOpenCVSharpTest.Win_NewImage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFOpenCVSharpTest"
+        mc:Ignorable="d"
+        Title="Win_NewImage" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" Activated="Window_Activated">
+    <Grid>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <Canvas Name="canvas" >
+                <Canvas.Resources>
+                    <Style TargetType="Canvas">
+                        <Setter Property="RenderOptions.BitmapScalingMode" Value="NearestNeighbor"/>
+                    </Style>
+                </Canvas.Resources>
+                <Canvas.LayoutTransform>
+                    <TransformGroup>
+                        <ScaleTransform  x:Name="myScaleTransform"/>
+                        <RotateTransform x:Name="myRotateTransform"/>
+                    </TransformGroup>
+                </Canvas.LayoutTransform>
+            </Canvas>
+        </ScrollViewer>
+    </Grid>
+</Window>
