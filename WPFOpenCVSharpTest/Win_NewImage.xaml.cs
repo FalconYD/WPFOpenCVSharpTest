@@ -30,12 +30,10 @@ namespace WPFOpenCVSharpTest
             this.id = id;
         }
 
-        public void fn_OpenImage(string strFile)
+        public void fn_SetImage(Mat mat, string strTitle = "Image_")
         {
-            string strTitle = strFile.Substring(strFile.LastIndexOf("\\") + 1);
-            this.Title = strTitle;
-            Mat temp = Cv2.ImRead(strFile);
-            ImageBrush ib = new ImageBrush(WriteableBitmapConverter.ToWriteableBitmap(temp));
+            this.Title = strTitle + id;
+            ImageBrush ib = new ImageBrush(WriteableBitmapConverter.ToWriteableBitmap(mat));
             ib.Stretch = Stretch.None;
 
             canvas.Width = ib.ImageSource.Width;
@@ -43,17 +41,19 @@ namespace WPFOpenCVSharpTest
             canvas.Background = ib;
         }
 
-        public void fn_SaveImage(string strFile)
+        public Mat fn_GetImage()
         {
+            Mat matRtn = null;
             ImageBrush ib = canvas.Background as ImageBrush;
-            if(ib != null)
+            if (ib != null)
             {
                 WriteableBitmap wb = ib.ImageSource as WriteableBitmap;
                 if (wb != null)
                 {
-                    Cv2.ImWrite(strFile, WriteableBitmapConverter.ToMat(wb));
+                    matRtn = WriteableBitmapConverter.ToMat(wb);
                 }
             }
+            return matRtn;
         }
 
         public void fn_Zoom(double zoom)

@@ -13,13 +13,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using OpenCvSharp;
 
 namespace WPFOpenCVSharpTest
 {
     /// <summary>
     /// MainWindow.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : System.Windows.Window
     {
         List<Win_NewImage> listImage = new List<Win_NewImage>();
         public int _nSelWin;
@@ -31,14 +32,24 @@ namespace WPFOpenCVSharpTest
         private void bn_Open_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog fdlg = new OpenFileDialog();
-            if(fdlg.ShowDialog() == true)
+            fdlg.Filter = "Image (*.bmp, *.png, *.jpg, *.tiff)|*.bmp; *.png; *.jpg; *.tiff";
+            if (fdlg.ShowDialog() == true)
             {
                 int id = listImage.Count;
-                //fdlg.FileName
+                string strFile = fdlg.FileName;
+                string strTitle = strFile.Substring(strFile.LastIndexOf("\\") + 1);
+                Mat temp = Cv2.ImRead(strFile);
                 listImage.Add(new Win_NewImage(this, id));
-                listImage[id].fn_OpenImage(fdlg.FileName);
+                listImage[id].fn_SetImage(temp, strTitle);
                 listImage[id].Show();
+                fn_WriteLog($"Image Open : {fdlg.FileName}");
             }
+        }
+
+        private void fn_WriteLog(string strLog)
+        {
+            listLog.Items.Add($"[{DateTime.Now:HH:mm:ss:fff}] {strLog}");
+            listLog.ScrollIntoView(listLog.Items[listLog.Items.Count - 1]);
         }
 
         private void bn_Zoom_In(object sender, RoutedEventArgs e)
@@ -60,10 +71,16 @@ namespace WPFOpenCVSharpTest
 
         private void bn_Save_Click(object sender, RoutedEventArgs e)
         {
-            SaveFileDialog fdlg = new SaveFileDialog();
-            if(fdlg.ShowDialog() == true)
+            if (listImage.Count > 0)
             {
-                listImage[_nSelWin].fn_SaveImage(fdlg.FileName);
+                SaveFileDialog fdlg = new SaveFileDialog();
+                fdlg.Filter = "Image (*.bmp, *.png, *.jpg, *.tiff)|*.bmp; *.png; *.jpg; *.tiff";
+                fdlg.FileName = DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
+                if (fdlg.ShowDialog() == true)
+                {
+                    Cv2.ImWrite(fdlg.FileName, listImage[_nSelWin].fn_GetImage());
+                    fn_WriteLog($"Image Save : {fdlg.FileName}");
+                }
             }
         }
 

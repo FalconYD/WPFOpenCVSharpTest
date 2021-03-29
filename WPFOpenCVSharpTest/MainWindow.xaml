@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFOpenCVSharpTest"
         mc:Ignorable="d"
-        Title="WPFOpenCVSharpTest" Height="100" Width="800">
+        Title="WPFOpenCVSharpTest" Height="200" Width="400">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
@@ -19,12 +19,33 @@
                 <MenuItem Header="Zoom In"  Click="bn_Zoom_In"/>
                 <MenuItem Header="Zoom Out" Click="bn_Zoom_Out"/>
             </MenuItem>
+            <MenuItem Header="Image">
+                <MenuItem Header="GrayScale" />
+                <MenuItem Header="Inverse" />
+                <MenuItem Header="Logical Sum" />
+                <MenuItem Header="Resize" />
+                <MenuItem Header="Rotate" />
+                <Separator/>
+                <MenuItem Header="Gaussian"/>
+                <MenuItem Header="Canny Edge"/>
+                <Separator/>
+                <MenuItem Header="Threshold"/>
+                <MenuItem Header="Blob"/>
+                <MenuItem Header="Mopology">
+                    <MenuItem Header="Erode"/>
+                    <MenuItem Header="Dilite"/>
+                </MenuItem>
+                <MenuItem Header="Template Matching"/>
+                <MenuItem Header="SIFT/SURF"/>
+            </MenuItem>
         </Menu>
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Height="30">
-            <Button Content="1x"       Click="bn_Zoom_1x"/>
-            <Button Content="Zoom In"  Click="bn_Zoom_In"/>
-            <Button Content="Zoom Out" Click="bn_Zoom_Out"/>
+            <Button Content="1x"      Width="40" Click="bn_Zoom_1x"/>
+            <Button Content="ZoomIn"  Width="40" Click="bn_Zoom_In"/>
+            <Button Content="ZoomOut" Width="40" Click="bn_Zoom_Out"/>
         </StackPanel>
-        
+        <GroupBox Header="LOG" DockPanel.Dock="Bottom" Height="100">
+            <ListBox Name="listLog"/>
+        </GroupBox>
     </DockPanel>
 </Window>
