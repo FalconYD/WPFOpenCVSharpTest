@@ -21,18 +21,15 @@ namespace WPFOpenCVSharpTest
     /// </summary>
     public partial class Win_NewImage : System.Windows.Window
     {
-        int id = -1;
-        
-        public Win_NewImage(System.Windows.Window win, int id)
+        public Win_NewImage(System.Windows.Window win)
         {
             InitializeComponent();
             this.Owner = win;
-            this.id = id;
         }
-
+        
         public void fn_SetImage(Mat mat, string strTitle = "Image_")
         {
-            this.Title = strTitle + id;
+            this.Title = strTitle;
             ImageBrush ib = new ImageBrush(WriteableBitmapConverter.ToWriteableBitmap(mat));
             ib.Stretch = Stretch.None;
 
@@ -64,12 +61,17 @@ namespace WPFOpenCVSharpTest
 
         private void Window_Activated(object sender, EventArgs e)
         {
-            ((MainWindow)Owner)._nSelWin = id;
+            ((MainWindow)Owner).fn_ActivatedWindow(this);
         }
 
         public double fn_GetScale()
         {
             return myScaleTransform.ScaleX;
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ((MainWindow)Owner).fn_DestoryWindow(this);
         }
     }
 }

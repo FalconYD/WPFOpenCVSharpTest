@@ -20,23 +20,23 @@
                 <MenuItem Header="Zoom Out" Click="bn_Zoom_Out"/>
             </MenuItem>
             <MenuItem Header="Image">
-                <MenuItem Header="GrayScale" />
-                <MenuItem Header="Inverse" />
-                <MenuItem Header="Logical Sum" />
-                <MenuItem Header="Resize" />
-                <MenuItem Header="Rotate" />
-                <Separator/>
-                <MenuItem Header="Gaussian"/>
-                <MenuItem Header="Canny Edge"/>
-                <Separator/>
-                <MenuItem Header="Threshold"/>
-                <MenuItem Header="Blob"/>
-                <MenuItem Header="Mopology">
-                    <MenuItem Header="Erode"/>
-                    <MenuItem Header="Dilite"/>
+                <MenuItem Header="GrayScale"         Click="bn_GrayScale_Click"/>
+                <MenuItem Header="Inverse"           Click="bn_Inverse_Click"/>
+                <MenuItem Header="Logical Sum"       Click="bn_LogicalSum_Click"/>
+                <MenuItem Header="Resize"            Click="bn_Resize_Click"/>
+                <MenuItem Header="Rotate"            Click="bn_Rotate_Click"/>
+                <Separator/>                         
+                <MenuItem Header="Gaussian"          Click="bn_Gaussian_Click"/>
+                <MenuItem Header="Canny Edge"        Click="bn_Canny_Click"/>
+                <Separator/>                         
+                <MenuItem Header="Threshold"         />
+                <MenuItem Header="Blob"              />
+                <MenuItem Header="Mopology">         
+                    <MenuItem Header="Erode"         />
+                    <MenuItem Header="Dilite"        />
                 </MenuItem>
-                <MenuItem Header="Template Matching"/>
-                <MenuItem Header="SIFT/SURF"/>
+                <MenuItem Header="Template Matching" />
+                <MenuItem Header="SIFT/SURF"         />
             </MenuItem>
         </Menu>
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Height="30">
