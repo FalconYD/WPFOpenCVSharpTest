@@ -29,20 +29,25 @@
                 <MenuItem Header="Gaussian"          Click="bn_Gaussian_Click"/>
                 <MenuItem Header="Canny Edge"        Click="bn_Canny_Click"/>
                 <Separator/>                         
-                <MenuItem Header="Threshold"         />
-                <MenuItem Header="Blob"              />
+                <MenuItem Header="Threshold"         Click="bn_Threshold_Click"/>
+                <MenuItem Header="Blob"              Click="bn_Blob_Click"/>
                 <MenuItem Header="Mopology">         
-                    <MenuItem Header="Erode"         />
-                    <MenuItem Header="Dilite"        />
+                    <MenuItem Header="Erode"         Click="bn_Erode_Click"/>
+                    <MenuItem Header="Dilate"        Click="bn_Dilate_Click"/>
+                    <MenuItem Header="Opening"       Click="bn_Opening_Click"/>
+                    <MenuItem Header="Closing"       Click="bn_Closing_Click"/>
                 </MenuItem>
-                <MenuItem Header="Template Matching" />
-                <MenuItem Header="SIFT/SURF"         />
+                <Separator/>
+                <MenuItem Header="Matching" Click="bn_Match_Click"/>
             </MenuItem>
         </Menu>
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Height="30">
+            <Button Content="Open"    Width="40" Click="bn_Open_Click"/>
+            <Button Content="Save"    Width="40" Click="bn_Save_Click"/>
+            <TextBlock Width="5"/>
             <Button Content="1x"      Width="40" Click="bn_Zoom_1x"/>
-            <Button Content="ZoomIn"  Width="40" Click="bn_Zoom_In"/>
-            <Button Content="ZoomOut" Width="40" Click="bn_Zoom_Out"/>
+            <Button Content="Z +"     Width="40" Click="bn_Zoom_In"/>
+            <Button Content="Z -"     Width="40" Click="bn_Zoom_Out"/>
         </StackPanel>
         <GroupBox Header="LOG" DockPanel.Dock="Bottom" Height="100">
             <ListBox Name="listLog"/>

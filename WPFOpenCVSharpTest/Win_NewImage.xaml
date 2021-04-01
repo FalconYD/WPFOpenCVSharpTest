@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFOpenCVSharpTest"
         mc:Ignorable="d"
-        Title="Win_NewImage" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" Activated="Window_Activated" Closing="Window_Closing">
+        Title="Win_NewImage" MaxHeight="1000" MaxWidth="1920" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" Activated="Window_Activated" Closing="Window_Closing">
     <Grid>
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
             <Canvas Name="canvas" >

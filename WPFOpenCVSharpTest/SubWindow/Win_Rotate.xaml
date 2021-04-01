@@ -1,0 +1,30 @@
+﻿<Window x:Class="WPFOpenCVSharpTest.SubWindow.Win_Rotate"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFOpenCVSharpTest.SubWindow"
+        mc:Ignorable="d"
+        Title="Win_Rotate" Height="150" Width="200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <UniformGrid Columns="1">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Text="Angle : " Width="50"/>
+                    <TextBox Name="tb_Angle"  Text="0"  Width="100"/>
+                    <TextBlock Text=" º"  Width="20"/>
+                </StackPanel>
+            </UniformGrid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <UniformGrid Columns="2">
+                <Button Content="OK"     Click="bn_OK_Click"/>
+                <Button Content="Cancel" Click="bn_Cancel_Click"/>
+            </UniformGrid>
+        </Grid>
+    </Grid>
+</Window>

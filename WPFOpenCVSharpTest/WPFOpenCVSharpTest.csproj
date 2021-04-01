@@ -70,6 +70,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="SubWindow\Win_LogicalSum.xaml.cs">
+      <DependentUpon>Win_LogicalSum.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\Win_Matching.xaml.cs">
+      <DependentUpon>Win_Matching.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\Win_Threshold.xaml.cs">
+      <DependentUpon>Win_Threshold.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\Win_Canny.xaml.cs">
+      <DependentUpon>Win_Canny.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\Win_Gaussian.xaml.cs">
+      <DependentUpon>Win_Gaussian.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\Win_Rotate.xaml.cs">
+      <DependentUpon>Win_Rotate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\Win_Resize.xaml.cs">
+      <DependentUpon>Win_Resize.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Win_NewImage.xaml.cs">
       <DependentUpon>Win_NewImage.xaml</DependentUpon>
     </Compile>
@@ -85,6 +106,34 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SubWindow\Win_LogicalSum.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\Win_Matching.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindow\Win_Threshold.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SubWindow\Win_Canny.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SubWindow\Win_Gaussian.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SubWindow\Win_Rotate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SubWindow\Win_Resize.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Win_NewImage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

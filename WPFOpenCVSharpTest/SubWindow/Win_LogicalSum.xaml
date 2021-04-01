@@ -1,0 +1,48 @@
+﻿<Window x:Class="WPFOpenCVSharpTest.SubWindow.Win_LogicalSum"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFOpenCVSharpTest.SubWindow"
+        mc:Ignorable="d"
+        Title="Win_LogicalSum" Height="250" Width="200" WindowStyle="ToolWindow" Closed="Window_Closed">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <GroupBox Header="Source Select">
+                <UniformGrid Columns="1">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <TextBlock Text="Source 1 :"/>
+                        <ComboBox Name="cb_Src1" Width="120"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <TextBlock Text="Source 2 :"/>
+                        <ComboBox Name="cb_Src2" Width="120"/>
+                    </StackPanel>
+                </UniformGrid>
+            </GroupBox>
+        </Grid>
+        <Grid Grid.Row="1">
+            <GroupBox Header="Mode Select">
+                <UniformGrid Columns="3">
+                    <RadioButton Content="Add"  VerticalAlignment="Center" GroupName="LogicalSum" Click="radio_Click" CommandParameter="0" IsChecked="True"/>
+                    <RadioButton Content="Sub"  VerticalAlignment="Center" GroupName="LogicalSum" Click="radio_Click" CommandParameter="1"/>
+                    <RadioButton Content="Avg"  VerticalAlignment="Center" GroupName="LogicalSum" Click="radio_Click" CommandParameter="2"/>
+                    <RadioButton Content="Diff" VerticalAlignment="Center" GroupName="LogicalSum" Click="radio_Click" CommandParameter="3"/>
+                    <RadioButton Content="AND"  VerticalAlignment="Center" GroupName="LogicalSum" Click="radio_Click" CommandParameter="4"/>
+                    <RadioButton Content="OR"   VerticalAlignment="Center" GroupName="LogicalSum" Click="radio_Click" CommandParameter="5"/>
+                </UniformGrid>
+            </GroupBox>
+        </Grid>
+        <Grid Grid.Row="2">
+            <UniformGrid Columns="2">
+                <Button Content="OK"     Click="bn_OK_Click"/>
+                <Button Content="Cancel" Click="bn_Cancel_Click"/>
+            </UniformGrid>
+        </Grid>
+    </Grid>
+</Window>

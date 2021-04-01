@@ -36,6 +36,9 @@ namespace WPFOpenCVSharpTest
             canvas.Width = ib.ImageSource.Width;
             canvas.Height = ib.ImageSource.Height;
             canvas.Background = ib;
+
+            this.Width  = canvas.Width  + 40;
+            this.Height = canvas.Height + 40;
         }
 
         public Mat fn_GetImage()
